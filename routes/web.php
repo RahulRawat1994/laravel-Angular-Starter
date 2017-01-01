@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('index');
 });
+
+Route::any('{catchall}', function() {
+   return view('index');
+})->where('catchall', '.*');
